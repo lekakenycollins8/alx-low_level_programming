@@ -8,14 +8,15 @@
 int main(void)
 {
 	int n = 50;
-	unsigned long long int first = 1, second = 2, next;
+	int i;
+	long first = 1, second = 2, next;
 
-	printf("%llu, %llu, ", first, second);
+	printf("%ld, %ld, ", first, second);
 
-	for (int i = 3; i <= n; i++)
+	for (i = 3; i <= n; i++)
 	{
 		next = first + second;
-		printf("%llu", next);
+		printf("%ld", next);
 
 		if (i != n)
 		{
