@@ -9,21 +9,39 @@ int main(void)
 {
 	int n = 98;
 	int i;
-	long first = 1, second = 2, next;
+	unsigned long f1 = 1, f2 = 2, next;
+	unsigned long f1_h1, f1_h2, f2_h1, f2_h2;
+	unsigned long h1, h2;
 
-	printf("%ld, %ld ", first, second);
-
-	for (i = 3; i <= n; i++)
+	for (i = 3; i < 92; i++)
 	{
-		next = first + second;
-		printf("%ld", next);
-
+		next = f1 + f2;
+		printf("%lu", next);
+		f1 = f2;
+		f2 = next;
+	}
+	f1_h1 = f1 / 10000000000;
+	f2_h1 = f2 / 10000000000;
+	f1_h2 = f1 % 10000000000;
+	f2_h2 = f2 % 10000000000;
+	for (i = 93; i < 99; i++)
+	{
+		h1 = f1_h1 + f2_h1;
+		h2 = f1_h2 + f2_h2;
+		if (f1_h2 + f2_h2 > 9999999999)
+		{
+			h1 += 1;
+			h2 %= 10000000000;
+		}
+		printf("%lu%lu", h1, h2);
 		if (i != n)
 		{
 			printf(", ");
 		}
-		first = second;
-		second = next;
+		f1_h1 = f2_h1;
+		f1_h2 = f2_h2;
+		f2_h1 = h1;
+		f2_h2 = h2;
 	}
 	printf("\n");
 	return (0);
