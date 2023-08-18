@@ -2,7 +2,7 @@
 
 /**
  * main - Entry point
- * Prints numbers from 1 to 100
+ * Prints numbers from 1 to 100 with FizzBuzz rules
  * Return: 0 (success)
  */
 
@@ -26,7 +26,7 @@ int main(void)
 		}
 		else
 		{
-			printf("%d ", i);
+			printf("%d", i);
 		}
 		if (i != 100)
 		{
