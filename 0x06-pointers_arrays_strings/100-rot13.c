@@ -10,20 +10,20 @@ char *rot13(char *str)
 {
 	int i;
 	char *temp = str;
-	char lowercase_alpha[] = "abcdefghijklmnopqrstuvwxyz";
-	char uppercase_alpha[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	char rot13_alpha[] = "nopqrstuvwxyzabcdefghijklm";
-	char rot13_ualpha[] = "NOPQRSTUVWXYZABCDEFGHIJKLM";
+	char alpha[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	char rot13_alpha[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
 
 	while (*temp != '\0')
 	{
-		for (i = 0; rot13_alpha[i] && rot13_ualpha[i] != '\0'; i++)
+		i = 0;
+
+		while (alpha[i] != '\0' && *temp != alpha[i])
 		{
-			if (*temp == lowercase_alpha[i] || *temp == uppercase_alpha[i])
-			{
-				*temp = (*temp == lowercase_alpha[i]) ? rot13_alpha[i] : rot13_ualpha[i];
-				break;
-			}
+			i++;
+		}
+		if (alpha[i] != '\0')
+		{
+			*temp = rot13_alpha[i];
 		}
 		temp++;
 	}
