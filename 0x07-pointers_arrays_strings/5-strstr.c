@@ -3,7 +3,7 @@
 
 /**
  * _strstr - Locates a substring
- * @haystack - Pointer to main string
+ * @haystack: Pointer to main string
  * @needle: Pointer to substring
  * Return: Pointer to main string, NULL if not found
  */
