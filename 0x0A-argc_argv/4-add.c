@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
 	}
 	for (i = 1; i < argc; i++)
 	{
-		int num =atoi(argv[i]);
+		int num = atoi(argv[i]);
 
 		if (num == 0 && *argv[i] != '0')
 		{
