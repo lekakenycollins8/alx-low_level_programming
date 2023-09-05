@@ -34,7 +34,7 @@ char *argstostr(int ac, char **av)
 	{
 		strcpy(newstr + j, av[i]);
 		j += strlen(av[i]);
-		if (i < ac )
+		if (i < ac)
 		{
 			newstr[j] = '\n';
 			j++;
