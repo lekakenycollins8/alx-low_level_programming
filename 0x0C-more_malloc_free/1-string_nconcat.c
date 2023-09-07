@@ -12,11 +12,11 @@
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-        unsigned int i;
-        char *newstr;
-        unsigned int len1 = strlen(s1);
+	unsigned int i;
+	char *newstr;
+   	unsigned int len1 = strlen(s1);
         unsigned int len2 = strlen(s2);
-        unsigned int total_len = len1 + ((n < len2) ? n : len2);
+  	unsigned int total_len = len1 + ((n < len2) ? n : len2);
 
         if (s1 == NULL)
         {
