@@ -4,9 +4,9 @@
 
 /**
  * *add_node - Adds a new node at the beginning of a list_t list
- * @head: Pointer to first node
- * @str: 
- * Return: address of the new element, otherwise NULL
+ * @head: Pointer to a pointer to the first node
+ * @str: String to be duplicated and added to new node
+ * Return: Address of new element, otherwise NULL if malloc fails
  */
 
 list_t *add_node(list_t **head, const char *str)
