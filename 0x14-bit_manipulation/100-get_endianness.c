@@ -8,12 +8,6 @@
 
 int get_endianness(void)
 {
-	union 
-	{
-		int integer;
-		char byte[sizeof(int)];
-	} test;
-
 	test.integer = 1;
 
 	if (test.byte[0] == 1)
