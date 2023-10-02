@@ -29,7 +29,7 @@ int main(int ac, char **av)
 
 	if (fd_write == -1)
 	{
-		dprintf(2, "Error: Can't write to file %s\n", av[2]);
+		dprintf(2, "Error: Can't write to %s\n", av[2]);
 		exit(99);
 	}
 	while ((bytes_read = read(fd_read, buffer, BUFFER_SIZE)) > 0)
@@ -37,7 +37,7 @@ int main(int ac, char **av)
 		bytes_write = write(fd_write, buffer, bytes_read);
 		if (bytes_write == -1)
 		{
-			dprintf(2, "Error: Can't write to file %s\n", av[2]);
+			dprintf(2, "Error: Can't write to %s\n", av[2]);
 			close(fd_read);
 			close(fd_write);
 			exit(99);
@@ -48,9 +48,9 @@ int main(int ac, char **av)
 
 	if (fd_read == -1 || fd_write == -1)
 	{
-		dprintf(2, "Error: Can't close fd\n");
+		dprintf(2, "Error: Can't close fd %d\n", fd_read);
+		dprintf(2, "Error: Can't close fd %d\n", fd_write);
 		exit(100);
 	}
-	printf("COpy successful\n");
 	exit(0);
 }
