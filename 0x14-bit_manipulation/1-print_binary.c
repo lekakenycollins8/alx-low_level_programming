@@ -11,6 +11,6 @@ void print_binary(unsigned long int n)
 
 	for (bits = sizeof(n) * 8 - 1; bits >= 0; bits--)
 	{
-		_putchar((n >> bits) & 1 ? '1' : '0');
+		_putchar((n >> bits) & 1UL ? '1' : '0');
 	}
 }
